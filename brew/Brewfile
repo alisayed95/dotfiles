@@ -1,0 +1,42 @@
+tap "anomalyco/tap"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Terminal multiplexer
+brew "tmux"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi", args: ["HEAD"]
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
+# Terminal-based AI coding assistant
+cask "claude-code"
+cask "font-hack-nerd-font"
+vscode "anysphere.remote-containers"
+vscode "anysphere.remote-ssh"
+vscode "dbaeumer.vscode-eslint"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "ms-vscode.theme-materialkit"
+vscode "pkief.material-icon-theme"
+vscode "vscodevim.vim"
