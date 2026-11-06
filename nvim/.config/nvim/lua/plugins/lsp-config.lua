@@ -10,38 +10,32 @@ return {
 		lazy = false,
 		opts = {
 			auto_install = true,
+			-- servers are enabled by vim.lsp.enable() below; enabling them here too attaches duplicates
+			automatic_enable = false,
 		},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
+			-- server defaults (cmd, filetypes, root) come from nvim-lspconfig's lsp/*.lua
+			vim.lsp.config("*", {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			})
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gopls.setup({
-			capabilities = capabilities,
-			})
-			lspconfig.kotlin_language_server.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
+			vim.lsp.config("rust_analyzer", {
 				settings = {
 					["rust-analyzer"] = {
 						check = { command = "clippy" },
 					},
 				},
+			})
+			vim.lsp.enable({
+				"lua_ls",
+				"html",
+				"tsc",
+				"pyright",
+				"gopls",
+				"kotlin_language_server",
+				"rust_analyzer",
 			})
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
