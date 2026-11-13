@@ -29,9 +29,10 @@ fi
 
 eval "$(starship init zsh)"
 
-source $(dirname $(gem which colorls))/tab_complete.sh
+export PATH="$HOME/.cargo/bin:$PATH"
+source <(lsr --completions zsh)
 
-alias ls='colorls'
+alias ls='lsr'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 source <(fzf --zsh)

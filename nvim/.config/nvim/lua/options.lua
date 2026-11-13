@@ -27,3 +27,5 @@ vim.keymap.set("v", "<leader>av", function()
 end, {desc= 'Copy selection for opencode'})
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
+vim.keymap.set("x", "<leader>y", '"+y', { desc = "Copy selection to clipboard" })

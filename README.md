@@ -6,7 +6,7 @@ My macOS terminal setup, themed with [Catppuccin Mocha](https://catppuccin.com) 
 
 | Package | Config for | Highlights |
 |---|---|---|
-| [`zsh`](zsh/.zshrc) | [Oh My Zsh](https://ohmyz.sh) | Autosuggestions, syntax highlighting, `fzf`, `zoxide` and `colorls` |
+| [`zsh`](zsh/.zshrc) | [Oh My Zsh](https://ohmyz.sh) | Autosuggestions, syntax highlighting, `fzf`, `zoxide` and `lsr` |
 | [`starship`](starship/.config/starship.toml) | [Starship](https://starship.rs) | Custom prompt |
 | [`kitty`](kitty/.config/kitty/kitty.conf) | [kitty](https://sw.kovidgoyal.net/kitty/) | Hack Nerd Font and Catppuccin Mocha |
 | [`tmux`](tmux/.config/tmux/tmux.conf) | [tmux](https://github.com/tmux/tmux) | Rounded status bar, per-program window icons and a colored session list |
@@ -52,8 +52,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
+`.zshrc` aliases `ls` to [`lsr`](https://github.com/alisayed95/lsr), my own Rust replacement for `colorls`. Cargo comes with the Brewfile's `rust`:
+
 ```bash
-gem install colorls
+cargo install --git https://github.com/alisayed95/lsr
 ```
 
 **4. Link the configs**

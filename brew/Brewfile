@@ -17,6 +17,8 @@ brew "lazygit"
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Safe, concurrent, practical language
+brew "rust"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
