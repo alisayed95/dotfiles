@@ -9,7 +9,11 @@
                             {
                                 "from": {
                                     "key_code": "left_control",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -17,8 +21,22 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "is_built_in_keyboard": true
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -26,17 +44,38 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            },
+            "devices": [
                 {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "left_control" }]
-                },
-                {
-                    "from": { "key_code": "escape" },
-                    "to": [{ "key_code": "caps_lock" }]
+                    "identifiers": {
+                        "is_keyboard": true
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "escape"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "caps_lock"
+                                }
+                            ]
+                        }
+                    ]
                 }
-            ],
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+            ]
         }
     ]
 }
